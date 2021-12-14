@@ -15,7 +15,7 @@ export default function Navbar() {
                 </li>
                 
                 <li className="nav-item-1">
-                <a className="nav-link btn-outline-warning" href="/">Sign Up</a>
+                <a className="nav-link btn-outline-warning" href="/">SignUp</a>
                 </li>
 
             </ul>
