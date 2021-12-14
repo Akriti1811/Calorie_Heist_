@@ -11,7 +11,7 @@ export default function FoodDetails(props) {
                         <div class="d-flex flex-wrap">                
                             <div class="col-md-4 col-12 px-2">
                                <h6>Calories</h6>
-                               <p>{porps.cal}</p>
+                               <p>{props.cal}</p>
                             </div>  
 
                             <div class="col-md-4 col-12 px-2">
