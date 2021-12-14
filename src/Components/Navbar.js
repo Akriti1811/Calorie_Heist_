@@ -29,10 +29,11 @@ export default function Navbar() {
             </li>
             </Link>
             
-
+            <Link to='/bmical'>
             <li className="nav-item">
             <a className="nav-link" href="/">BMI Calculator</a>
             </li>
+            </Link>
 
             <li className="nav-item">
             <a className="nav-link" href="/">Blog</a>
