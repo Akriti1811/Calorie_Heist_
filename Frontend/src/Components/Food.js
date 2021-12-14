@@ -1,10 +1,11 @@
 import React, {useEffect,useState} from 'react';
 import axios from 'axios';
-
+import FoodDetails from './FoodDetails';
 export default function Food(){
     const [data,setdata]=useState();
+    let query = '3lb carrots and a chicken sandwich and fries milk';
     useEffect(()=>{
-        const apiUrl="/nutrition?query=3lb carrots and a chicken sandwich";
+        const apiUrl=`/nutrition?query=${query}`;
         axios({
             method: 'GET',
             url: apiUrl,
@@ -22,20 +23,40 @@ export default function Food(){
         }).then((response) => {
             console.log(response.data)
             setdata(response.data["items"]);
-            console.log(data);
+           
         });
 
     },[]);
-    return(
+    console.log(data);
+    return data ? (
         <div className="cards">
-            {/* {
-                data.map(element,index)=>(
+            {
+                data && data.map((element,index)=>(
+                    
                     <div className="food-item-card">
-
+                        <FoodDetails name={element['name']}
+                         cal={element['calories']}
+                         carbs={element['carbohydrates_total_g']}
+                         colestrol={}
+                         />
+                        
+                        <h1>{element['name']}</h1>
+                        <h2>calories: </h2>
+                        <p>{element['calories']}</p>
+                        <h2>carbohydrates: </h2>
+                        <p>{element['carbohydrates_total_g']}g</p>
+                        <h2>cholesterol: </h2>
+                        <p>{element['cholesterol_mg']}mg</p>
+                        <h2>protein: </h2>
+                        <p>{element['protein_g']}g</p>
+                        <h2>sugar: </h2>
+                        <p>{element['sugar_g']}g</p>
+                        <h2>fat: </h2>
+                        <p>{element['fat_total_g']}g</p>
                     </div>
-                )
-            } */}
+                ))
+            }
         </div>
-    );
+    ): null;
 
 }
