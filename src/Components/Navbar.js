@@ -18,10 +18,10 @@ export default function Navbar() {
             </ul>
             </div>
         </nav>
-        <ul className="nav nav-pills justify-content-center m-3">
+        <ul className="nav justify-content-center m-3">
 
             <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">About</a>
+            <a className="nav-link active" aria-current="page" href="/">Home</a>
             </li>
             <Link to='/food'>
             <li className="nav-item nav-link">Food

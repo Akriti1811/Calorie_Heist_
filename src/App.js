@@ -7,6 +7,7 @@ import Navbar from "./Components/Navbar";
 import FoodDetails from "./Components/FoodDetails";
 import Food from "./Components/Food";
 import './App.css';
+import Home from "./Components/Home";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <Route exact path = "/">
         <div className="login">
          
-         
+         <Home/>
           {/* <FoodDetails/> */}
         </div>
           
