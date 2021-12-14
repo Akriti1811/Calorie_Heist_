@@ -4,12 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import Navbar from "./Components/Navbar";
-<<<<<<< HEAD
 import FoodDetails from "./Components/FoodDetails";
 
-=======
-import Food from "./Components/Food";
->>>>>>> 25039d9afa3f7990fed5ff4daf131106f120840e
 import './App.css';
 
 function App() {
