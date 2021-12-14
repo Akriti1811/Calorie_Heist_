@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from "react-router-dom";
 export default function Navbar() {
     return (
     <div>
@@ -9,15 +9,12 @@ export default function Navbar() {
             <a className="navbar-brand" href="/"> Fit Express</a>
             
             <ul className="nav justify-content-end">
-                
-                <li className="nav-item-1">
-                <a className="nav-link btn-outline-warning" href="/">Login</a>
-                </li>
-                
-                <li className="nav-item-1">
-                <a className="nav-link btn-outline-warning" href="/">SignUp</a>
-                </li>
-
+                <Link to='/login'>
+                    <li className="nav-item-1 nav-link btn-outline-warning">Login</li>
+                </Link>
+                <Link to='/login'>
+                    <li className="nav-item-1 nav-link btn-outline-warning">SignUp</li>
+                </Link>
             </ul>
             </div>
         </nav>
