@@ -23,10 +23,12 @@ export default function Navbar() {
             <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="/">About</a>
             </li>
-
-            <li className="nav-item">
-            <a className="nav-link" href="/">Food</a>
+            <Link to='/food'>
+            <li className="nav-item nav-link">Food
+            {/* <a className="nav-link" href="/">Food</a> */}
             </li>
+            </Link>
+            
 
             <li className="nav-item">
             <a className="nav-link" href="/">BMI Calculator</a>
