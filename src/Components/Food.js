@@ -51,7 +51,7 @@ export default function Food(){
                         <h2>cholesterol: </h2>
                         <p>{element['cholesterol_mg']}mg</p>
                         <h2>protein: </h2>
-                        <p>{element['protein_g']}g</p>
+                        <p>{}g</p>
                         <h2>sugar: </h2>
                         <p>{element['sugar_g']}g</p>
                         <h2>fat: </h2>
