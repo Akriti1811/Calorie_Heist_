@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import Navbar from "./Components/Navbar";
+import FoodDetails from "./Components/FoodDetails";
 
 import './App.css';
 
@@ -15,6 +16,7 @@ function App() {
         <div className="login">
          
           <Navbar/>
+          <FoodDetails/>
         </div>
           
         </Route>
