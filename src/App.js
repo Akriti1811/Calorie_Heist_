@@ -11,12 +11,13 @@ import './App.css';
 function App() {
   return (
     <Router>
+       <Navbar/>
       <Switch>
       <Route exact path = "/">
         <div className="login">
          
-          <Navbar/>
-          <FoodDetails/>
+         
+          {/* <FoodDetails/> */}
         </div>
           
         </Route>
@@ -37,7 +38,7 @@ function App() {
         </Route>
         <Route exact path = "/food">
         <div className="login">
-         <FoodDetails/>
+         {/* <FoodDetails/> */}
           <Food/>
         </div>
           
