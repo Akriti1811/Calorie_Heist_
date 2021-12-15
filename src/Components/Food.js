@@ -1,6 +1,8 @@
 import React, {useEffect,useState} from 'react';
 import axios from 'axios';
 import FoodDetails from './FoodDetails';
+import FooditemCard from './FooditemCard';
+import './Food.css';
 export default function Food(){
     const [data,setdata]=useState();
     let query = '3lb carrots and a chicken sandwich and fries milk';
@@ -28,20 +30,30 @@ export default function Food(){
 
     },[]);
     console.log(data);
+    let loader=<div className="loader">Loading...</div>
     return data ? (
         <div className="cards">
             {
                 data && data.map((element,index)=>(
                     
                     <div className="food-item-card">
-                        <FoodDetails name={element['name']}
+                        <FooditemCard
+                        name={element['name']}
+                        cal={element['calories']}
+                        carbs={element['carbohydrates_total_g']}
+                        colestrol={element['cholesterol_mg']}
+                        protein={element['protein_g']}
+                        sugar={element['sugar_g']}
+                        fat={element['fat_total_g']}
+                        />
+                        {/* <FoodDetails name={element['name']}
                          cal={element['calories']}
                          carbs={element['carbohydrates_total_g']}
                          colestrol={element['cholesterol_mg']}
                          protein={element['protein_g']}
                          sugar={element['sugar_g']}
                          fat={element['fat_total_g']}
-                         />
+                         /> */}
                         
                         {/* <h1>{element['name']}</h1>
                         <h2>calories: </h2>
@@ -60,6 +72,6 @@ export default function Food(){
                 ))
             }
         </div>
-    ): null;
+    ): loader;
 
 }
