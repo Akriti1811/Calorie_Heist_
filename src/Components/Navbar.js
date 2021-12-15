@@ -22,7 +22,7 @@ export default function Navbar() {
             </ul>
             </div>
         </nav>
-        <ul className="nav justify-content-center m-3">
+        <ul className="nav justify-content-center m-1">
 
            
             <Link to='/' className="nav-link active" aria-current="page">

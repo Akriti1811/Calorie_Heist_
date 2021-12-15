@@ -1,12 +1,12 @@
 import React from 'react'
-
+import './signup.css'
 export default function Login() {
   
     return (
-    <div className="mt-3 pt-3">
-        <div className=" py-5" >
+      <div class="signup row">       
+        <div className="col-md-6 py-5" >
             <h2 className="text-center py-4">LOGIN</h2>
-            <div className="col-md-4 col-12 form-inner pb-5 px-5 mx-auto">
+            <div className="col-md-6 col-12 form-inner pb-5 mx-auto">
             
             <form action="" method="post">
     
