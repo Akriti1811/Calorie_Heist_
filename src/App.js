@@ -19,7 +19,6 @@ function App() {
           <Route exact path = "/">
           <div className="login">        
           <Home/>
-            {/* <FoodDetails/> */}
           </div>
           </Route>
 
@@ -43,7 +42,6 @@ function App() {
 
           <Route exact path = "/food">
           <div className="login">
-          {/* <FoodDetails/> */}
             <Food/>
           </div>
             

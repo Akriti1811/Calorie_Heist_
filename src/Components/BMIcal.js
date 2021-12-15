@@ -1,14 +1,14 @@
 import React, {useEffect,useState} from 'react';
-
+import './BMIcal.css'
 
 export default function BMIcal() {
   const [Height,sethv] = useState()
   const [weight,sethw] = useState()
   const [bmi,setbmi] = useState();
-  let Underweight="Underweight =<18.5 "; 
+  let Underweight="Underweight = <18.5 "; 
   let normal = "Normal weight = 18.5–24.9 ";
   let overweight = "Overweight = 25–29.9";
-  let Obesity = "BMI of 30 or greater";
+  let Obesity = "Obesity = 30 or greater";
 
   const calculate=()=>{
     console.log(Height,weight)
@@ -21,21 +21,20 @@ export default function BMIcal() {
 
   }
     return (
-        <div className="mt-3 pt-3">
-        <div className=" py-5" >
-            <h2 className="text-center py-4">BMI Calculator</h2>
-            <div className="col-md-4 col-12 form-inner pb-5 px-5 mx-auto">
+      <div class="bmi row">
+        <div class="col-md-6"></div>
+        <div className="col-md-6 py-1" >
+            <h2 className="text-center pt-4 pb-2" style={{color: "brown"}}>BMI Calculator</h2>
+            <div className="col-md-4 col-12 form-inner mx-auto">
             
-            {/* <form action=""> */}
-    
-                <div className="col-12 mb-3">
+                <div className="col-12 mb-2">
                     <label for="inputEmail4" className="form-label">Height (cm)</label>
                     <input 
                     onChange={(e)=> sethv(e.target.value)}
                      className="form-control" id="inputEmail4"/>
                 </div>
 
-                <div className="col-12 mb-3">
+                <div className="col-12 mb-2">
                     <label for="inputPassword4" className="form-label">Weight (kg)</label>
                     <input 
                      onChange={(e)=> sethw(e.target.value)}
@@ -44,7 +43,7 @@ export default function BMIcal() {
               
                 <div className="row">
                   <div>
-                    <button type="submit" className="btn btn-primary col-md-3"
+                    <button type="submit" className="btn btn-danger "
                     onClick={()=> calculate()}
                     >Calculate</button>
                   </div>
@@ -52,27 +51,20 @@ export default function BMIcal() {
                   }
                 </div>
                 
-            {/* </form> */}
             <br/>
     
           </div>
-          <div className="col-md-4 col-12 form-inner pb-5 px-5 mx-auto">
-            <h4>BMI Catogories</h4>
+
+          <div className="col-md-4 col-12 form-inner pb-5 mx-auto text-center">
+            <h4 style={{color: "brown"}} >BMI Catogories</h4>
             <h6>{Underweight}</h6>
             <h6>{normal}</h6>
             <h6>{overweight}</h6>
             <h6>{Obesity}</h6>
-
           </div>
+
         </div>
-        
-
-
-      
-
-
-    </div>
-    
+      </div>
        
     )
 }

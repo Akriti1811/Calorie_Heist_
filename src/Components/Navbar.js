@@ -13,12 +13,12 @@ export default function Navbar() {
             
             <ul className="nav justify-content-end">
                 <Link to='/login' className="anchors">
-                    <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>Login/SignUp</li>
+                    <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>Login</li>
                 </Link>
 
-                {/* <Link to='/login'className="anchors">
+                <Link to='/signup'className="anchors">
                     <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>SignUp</li>
-                </Link> */}
+                </Link>
             </ul>
             </div>
         </nav>
