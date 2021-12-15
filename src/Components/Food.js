@@ -5,7 +5,7 @@ import FooditemCard from './FooditemCard';
 import './Food.css';
 export default function Food(){
     const [data,setdata]=useState();
-    let query = '3lb carrots and a chicken sandwich and fries milk';
+    let query = '3lb carrots and a chicken sandwich and fries milk apple banana';
     useEffect(()=>{
         const apiUrl=`/nutrition?query=${query}`;
         axios({

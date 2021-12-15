@@ -14,7 +14,6 @@ export default function BMIcal() {
     console.log(Height,weight)
     let val = null
     if(Height>0 && weight>0){
-      // Height/=10;
       val=(weight*10000/(Height*Height)).toFixed(2);
     }
        
@@ -49,7 +48,7 @@ export default function BMIcal() {
                     onClick={()=> calculate()}
                     >Calculate</button>
                   </div>
-                  {bmi? <h1>{bmi}</h1> : null
+                  {bmi? <h1><br/>{bmi}</h1> : null
                   }
                 </div>
                 
