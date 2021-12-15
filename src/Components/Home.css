@@ -1,0 +1,6 @@
+.background{
+    background-image: url("/src/images/homepagebg.png");
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+  }

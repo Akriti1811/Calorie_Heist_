@@ -4,46 +4,40 @@ import './Navbar.css'
 export default function Navbar() {
     return (
     <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="nav1 navbar navbar-expand-lg navbar-light ">
             <div className="container-fluid">
-            <Link to='/' className="navbar-brand ">
-                    Fit Express
+            <Link to='/' className="navbar-brand " style={{color: "white"}}>
+                    <i>Fit Express</i>
             </Link>
-            {/* <a className="navbar-brand" href="/"> </a> */}
+           
             
             <ul className="nav justify-content-end">
                 <Link to='/login' className="anchors">
-                    <li className="nav-item-1 nav-link btn-outline-warning">Login</li>
+                    <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>Login/SignUp</li>
                 </Link>
-                <Link to='/login'className="anchors">
-                    <li className="nav-item-1 nav-link btn-outline-warning">SignUp</li>
-                </Link>
+
+                {/* <Link to='/login'className="anchors">
+                    <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>SignUp</li>
+                </Link> */}
             </ul>
             </div>
         </nav>
         <ul className="nav justify-content-center m-3">
 
-            <li className="nav-item">
+           
             <Link to='/' className="nav-link active" aria-current="page">
-                Home
-            </Link>
-            {/* <a className="nav-link active" aria-current="page" href="/">Home</a> */}
-            </li>
+            <li className="nav-item" style={{color: "brown"}}>Home</li>
+            </Link>           
+
             <Link to='/food' className="anchors">
-            <li className="nav-item nav-link">Food
-            {/* <a className="nav-link" href="/">Food</a> */}
-            </li>
+            <li className="nav-item nav-link" style={{color: "brown"}}>Food</li>
             </Link>
             
             <Link to='/bmical'>
-            <li className="nav-item">
-            <a className="nav-link" href="/">BMI Calculator</a>
-            </li>
+            <li className="nav-item nav-link" style={{color: "brown"}} >BMI Calculator</li>
             </Link>
 
-            <li className="nav-item">
-            <a className="nav-link" href="/">Blog</a>
-            </li>       
+            <li className="nav-item nav-link" style={{color: "brown"}} >Blog</li>       
 
         </ul>
     </div>
