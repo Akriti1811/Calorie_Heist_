@@ -1,8 +1,12 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+<<<<<<< HEAD
 import {auth} from '../firebase';
 import { useDispatch,useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
+=======
+import './Navbar.css'
+>>>>>>> f619488c5449af0a09bc4af18cdc6a7d98968a12
 export default function Navbar() {
    
 
@@ -25,12 +29,15 @@ export default function Navbar() {
         
 
     <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="nav1 navbar navbar-expand-lg navbar-light ">
             <div className="container-fluid">
-            
-            <a className="navbar-brand" href="/"> Fit Express</a>
+            <Link to='/' className="navbar-brand " style={{color: "white"}}>
+                    <i>Fit Express</i>
+            </Link>
+           
             
             <ul className="nav justify-content-end">
+<<<<<<< HEAD
                 {!user && (<Link to='/login'>
                     <li className="nav-item-1 nav-link btn-outline-warning">Login</li>
                 </Link>)}
@@ -41,28 +48,34 @@ export default function Navbar() {
                 
                {user && (<button className="nav-item-1 nav-link btn-outline-warning" onClick={logOutHandler}>LogOut</button>)}
                
+=======
+                <Link to='/login' className="anchors">
+                    <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>Login</li>
+                </Link>
+
+                <Link to='/signup'className="anchors">
+                    <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>SignUp</li>
+                </Link>
+>>>>>>> f619488c5449af0a09bc4af18cdc6a7d98968a12
             </ul>
             </div>
         </nav>
-        <ul className="nav nav-pills justify-content-center m-3">
+        <ul className="nav justify-content-center m-1">
 
-            <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/">About</a>
-            </li>
-            <Link to='/food'>
-            <li className="nav-item nav-link">Food
-            {/* <a className="nav-link" href="/">Food</a> */}
-            </li>
+           
+            <Link to='/' className="nav-link active" aria-current="page">
+            <li className="nav-item" style={{color: "brown"}}>Home</li>
+            </Link>           
+
+            <Link to='/food' className="anchors">
+            <li className="nav-item nav-link" style={{color: "brown"}}>Food</li>
             </Link>
             
+            <Link to='/bmical'>
+            <li className="nav-item nav-link" style={{color: "brown"}} >BMI Calculator</li>
+            </Link>
 
-            <li className="nav-item">
-            <a className="nav-link" href="/">BMI Calculator</a>
-            </li>
-
-            <li className="nav-item">
-            <a className="nav-link" href="/">Blog</a>
-            </li>       
+            <li className="nav-item nav-link" style={{color: "brown"}} >Blog</li>       
 
         </ul>
     </div>

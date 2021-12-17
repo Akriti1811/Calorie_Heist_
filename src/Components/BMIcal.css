@@ -1,0 +1,6 @@
+.bmi{
+    background-image: url("/src/images/bmibg.jpg");
+    height: 575px;
+    background-size: cover;
+    background-position: center;
+}

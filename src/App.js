@@ -7,12 +7,17 @@ import Navbar from "./Components/Navbar";
 import FoodDetails from "./Components/FoodDetails";
 import Food from "./Components/Food";
 import './App.css';
+<<<<<<< HEAD
 import 'react-toastify/dist/ReactToastify.css'
 import {ToastContainer } from 'react-toastify'
 import RegisteComplete from "./Components/RegisterComplete";
 import {auth} from './firebase';
 import {useDispatch} from 'react-redux';
 
+=======
+import Home from "./Components/Home";
+import BMIcal from "./Components/BMIcal";
+>>>>>>> f619488c5449af0a09bc4af18cdc6a7d98968a12
 
 function App() {
 
@@ -43,6 +48,7 @@ function App() {
     <div>
     <ToastContainer />
     <Router>
+<<<<<<< HEAD
       <Switch>
       <Route exact path = "/">
         <div className="login">
@@ -81,6 +87,41 @@ function App() {
           <RegisteComplete />
        
          </Route>
+=======
+      <Navbar/>
+        <Switch>
+
+          <Route exact path = "/">
+          <div className="login">        
+          <Home/>
+          </div>
+          </Route>
+
+          <Route  path = "/bmical">
+          <div className="login">               
+            <BMIcal/>
+          </div>        
+          </Route>
+
+          <Route  path = "/login">
+          <div className="login">       
+            <Login/>
+          </div>        
+          </Route>
+          
+          <Route exact path = "/signup">
+          <div className="login">         
+            <SignUp/>
+          </div>            
+          </Route>
+
+          <Route exact path = "/food">
+          <div className="login">
+            <Food/>
+          </div>
+            
+          </Route>
+>>>>>>> f619488c5449af0a09bc4af18cdc6a7d98968a12
 
       </Switch>
      
