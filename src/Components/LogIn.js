@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
-
+import './signup.css'
 import { auth } from '../firebase'
 import { toast } from 'react-toastify'
 import {useDispatch} from 'react-redux';
@@ -53,7 +53,6 @@ export default function LogIn() {
         })
         history.push("/");
 
-
       }catch(err)
       {
         console.log(err,'error');
@@ -62,26 +61,24 @@ export default function LogIn() {
 
     };
     return (
-        <div class="mt-3 pt-3">
-        <div class=" py-5" >
-            <h2 class="text-center py-4">LOGIN</h2>
-            <div class="col-md-4 col-12 form-inner pb-5 px-5 mx-auto">
+      <div class="signup row">       
+        <div className="col-md-6 py-5" >
+            <h2 className="text-center py-4">LOGIN</h2>
+            <div className="col-md-6 col-12 form-inner pb-5 mx-auto">
             
-            <div>
+            <div action="" method="post">
     
-             
-            
-                <div class="mb-3">
-                <input required type="text" class="form-control py-2" placeholder="E-mail Address" name="Email" onChange={(e) => setEmail(e.target.value)}/>
+                <div className="mb-3">
+                  <input required type="text" className="form-control py-2" placeholder="E-mail Address" name="Email"  onChange={(e) => setEmail(e.target.value)}/>
                 </div>
-
-                <div class="mb-3">
-                <input required type="text" class="form-control py-2" placeholder="Password" name="Password" onChange ={(e) => setPassword(e.target.value)}/>
+    
+                <div className="mb-3">
+                  <input required type="text" className="form-control py-2" placeholder="Password" name="Password"  onChange ={(e) => setPassword(e.target.value)}/>
                 </div>
-
-                <div class="row">
+              
+                <div className="row">
                   <div>
-                    <button type="submit"  onClick= {handleLogIn}class="btn btn-primary col-md-3">LogIn</button>
+                    <button type="submit" onClick = {handleLogIn} className="btn btn-primary col-md-2">Login </button>
                   </div>
                 </div>
             </div>
@@ -89,7 +86,9 @@ export default function LogIn() {
     
           </div>
         </div>
-    </div>
-    
-    )
+    </div>)
 }
+
+
+
+

@@ -1,12 +1,9 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-<<<<<<< HEAD
 import {auth} from '../firebase';
 import { useDispatch,useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
-=======
 import './Navbar.css'
->>>>>>> f619488c5449af0a09bc4af18cdc6a7d98968a12
 export default function Navbar() {
    
 
@@ -25,10 +22,7 @@ export default function Navbar() {
     console.log(user,'user');
     return (
 
-
-        
-
-    <div>
+        <div>
         <nav className="nav1 navbar navbar-expand-lg navbar-light ">
             <div className="container-fluid">
             <Link to='/' className="navbar-brand " style={{color: "white"}}>
@@ -37,26 +31,15 @@ export default function Navbar() {
            
             
             <ul className="nav justify-content-end">
-<<<<<<< HEAD
-                {!user && (<Link to='/login'>
-                    <li className="nav-item-1 nav-link btn-outline-warning">Login</li>
-                </Link>)}
-                {!user && (<Link to='/signup'>
-                    <li className="nav-item-1 nav-link btn-outline-warning">SignUp</li>
-                </Link>)}
-
-                
-               {user && (<button className="nav-item-1 nav-link btn-outline-warning" onClick={logOutHandler}>LogOut</button>)}
-               
-=======
-                <Link to='/login' className="anchors">
+                {!user && <Link to='/login' className="anchors">
                     <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>Login</li>
-                </Link>
+                </Link>}
 
-                <Link to='/signup'className="anchors">
+               {!user &&  <Link to='/signup'className="anchors">
                     <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>SignUp</li>
-                </Link>
->>>>>>> f619488c5449af0a09bc4af18cdc6a7d98968a12
+                </Link>}
+
+                {user && (<button className="nav-item-1 nav-link btn-outline-warning" onClick={logOutHandler}>LogOut</button>)}
             </ul>
             </div>
         </nav>
@@ -79,5 +62,8 @@ export default function Navbar() {
 
         </ul>
     </div>
+        
     )
 }
+
+
