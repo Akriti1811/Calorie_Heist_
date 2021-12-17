@@ -1,7 +1,29 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import {auth} from '../firebase';
+import { useDispatch,useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
 export default function Navbar() {
+   
+
+    let history = useHistory();
+    let dispatch = useDispatch();
+    const logOutHandler = () =>{
+            auth.signOut();
+            dispatch({
+                type:"LOGOUT",
+                payload:null
+            })
+            history.push("/login");
+
+    }
+    let {user }= useSelector((state) => ({ ...state}));
+    console.log(user,'user');
     return (
+
+
+        
+
     <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
@@ -9,12 +31,16 @@ export default function Navbar() {
             <a className="navbar-brand" href="/"> Fit Express</a>
             
             <ul className="nav justify-content-end">
-                <Link to='/login'>
+                {!user && (<Link to='/login'>
                     <li className="nav-item-1 nav-link btn-outline-warning">Login</li>
-                </Link>
-                <Link to='/login'>
+                </Link>)}
+                {!user && (<Link to='/signup'>
                     <li className="nav-item-1 nav-link btn-outline-warning">SignUp</li>
-                </Link>
+                </Link>)}
+
+                
+               {user && (<button className="nav-item-1 nav-link btn-outline-warning" onClick={logOutHandler}>LogOut</button>)}
+               
             </ul>
             </div>
         </nav>
