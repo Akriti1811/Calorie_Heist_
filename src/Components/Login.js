@@ -20,7 +20,7 @@ export default function Login() {
               
                 <div className="row">
                   <div>
-                    <button type="submit" className="btn btn-primary col-md-2">Login</button>
+                    <button type="submit" className="btn btn-primary col-md-2">Login </button>
                   </div>
                 </div>
             </form>
