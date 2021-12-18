@@ -37,6 +37,9 @@ export default function SignUp() {
     setEmail("");  
   }
 
+
+  
+
   return (
     <div class="signup row">
      

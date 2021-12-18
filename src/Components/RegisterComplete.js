@@ -3,6 +3,26 @@ import { useHistory } from "react-router-dom";
 import { auth } from '../firebase'
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux';
+import axios from 'axios';
+
+
+
+
+const createOrUpdateBackend = async (authToken) =>{
+
+  return await axios.post('http://localhost:3001/api/create-user',{},{
+    headers:{
+      authToken:authToken
+    },
+  })
+} 
+
+
+
+
+
+
 
 export default function RegisteComplete() {
 
@@ -18,6 +38,8 @@ export default function RegisteComplete() {
   useEffect(() => {
     setEmail(window.localStorage.getItem('emailForReg'));
   }, [])
+
+  let dispatch = useDispatch();
 
 
 
@@ -41,12 +63,24 @@ export default function RegisteComplete() {
         await user.updatePassword(password);
         const idTokenResult = await user.getIdTokenResult();
 
+
+       createOrUpdateBackend(idTokenResult.token).then((res) => console.log("Created")).catch((res) => console.log(res));
+      
+      //   dispatch({
+      //   type:"LOGGED_IN_USER",
+      //   payload:{
+      //     email:user.email,
+      //     token:idTokenResult.token,
+      //   }
+      // })
+      history.push("/");
+
         // redux store
         console.log(idTokenResult);
 
         // redirect
 
-        history.push('/');
+      
 
       }
     }
@@ -55,6 +89,25 @@ export default function RegisteComplete() {
       toast.error(error.message);
     }
   }
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <div class="mt-3 pt-3">
