@@ -15,7 +15,7 @@ export default function Food(){
     // let query = '3lb carrots and a chicken sandwich and fries' + vegies.join(" ") + fruits.join(" ")// + milk.join(" ") + Beans.join(" ");
     console.log(query);
     useEffect(()=>{
-        const apiUrl=`/nutrition?query=${qry}`;
+        const apiUrl=`https://api.calorieninjas.com/v1/nutrition?query=${qry}`;
         axios({
             method: 'GET',
             url: apiUrl,
@@ -36,7 +36,7 @@ export default function Food(){
 
     },[]);
     const dataHandler = ()=>{
-        const apiUrl=`/nutrition?query=${qry}`;
+        const apiUrl=`https://api.calorieninjas.com/v1/nutrition?query=${qry}`;
         axios({
             method: 'GET',
             url: apiUrl,
