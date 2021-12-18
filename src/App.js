@@ -81,7 +81,7 @@ function App() {
 
         <Route exact path = "/food">
         <div className="login">
-         <FoodDetails/>
+         {/* <FoodDetails/> */}
           <Food/>
         </div>
           
