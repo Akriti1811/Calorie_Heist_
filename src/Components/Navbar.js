@@ -28,7 +28,8 @@ export default function Navbar() {
             <Link to='/' className="navbar-brand " style={{color: "white"}}>
                     <i>Fit Express</i>
             </Link>
-           
+     
+  
             
             <ul className="nav justify-content-end">
                 {!user && <Link to='/login' className="anchors">
@@ -38,8 +39,21 @@ export default function Navbar() {
                {!user &&  <Link to='/signup'className="anchors">
                     <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>SignUp</li>
                 </Link>}
+               
+                {/* {user && (<button className="nav-item-1 nav-link btn-outline-warning" onClick={logOutHandler}>LogOut</button>)} */}
+            
+                {user&& <div class="dropdown">
+                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Profile
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton1">
+                    <Link to='/profile'>
+                        <li className="dropdown-item">My Profile</li>
+                    </Link>
+                        <li className="dropdown-item btn-outline-warning" onClick={logOutHandler}>LogOut</li>
+                    </ul>
+                </div>}
 
-                {user && (<button className="nav-item-1 nav-link btn-outline-warning" onClick={logOutHandler}>LogOut</button>)}
             </ul>
             </div>
         </nav>
@@ -62,9 +76,7 @@ export default function Navbar() {
             <li className="nav-item nav-link" style={{color: "brown"}} >BMI Calculator</li>
             </Link>
 
-            <Link to='/profile'>
-            <li className="nav-item nav-link" style={{color: "brown"}} >My Profile</li>
-            </Link>
+            
 
             <li className="nav-item nav-link" style={{color: "brown"}} >Blog</li>       
 
