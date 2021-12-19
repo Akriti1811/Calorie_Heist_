@@ -62,6 +62,10 @@ export default function Navbar() {
             <li className="nav-item nav-link" style={{color: "brown"}} >BMI Calculator</li>
             </Link>
 
+            <Link to='/profile'>
+            <li className="nav-item nav-link" style={{color: "brown"}} >My Profile</li>
+            </Link>
+
             <li className="nav-item nav-link" style={{color: "brown"}} >Blog</li>       
 
         </ul>

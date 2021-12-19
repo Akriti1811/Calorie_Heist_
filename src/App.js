@@ -7,6 +7,7 @@ import Navbar from "./Components/Navbar";
 import FoodDetails from "./Components/FoodDetails";
 import Food from "./Components/Food";
 import Drinks from "./Components/Drinks";
+import Profile from "./Components/Profile";
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css'
 import {ToastContainer } from 'react-toastify'
@@ -82,6 +83,12 @@ function App() {
         <Route exact path = "/drinks">
         <div className="login">
           <Drinks/>
+        </div>         
+        </Route>
+
+        <Route exact path = "/profile">
+        <div className="login">
+          <Profile/>
         </div>         
         </Route>
 
