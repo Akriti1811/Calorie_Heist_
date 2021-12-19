@@ -53,6 +53,10 @@ export default function Navbar() {
             <Link to='/food' className="anchors">
             <li className="nav-item nav-link" style={{color: "brown"}}>Food</li>
             </Link>
+
+            <Link to='/drinks' className="anchors">
+            <li className="nav-item nav-link" style={{color: "brown"}}>Drinks</li>
+            </Link>
             
             <Link to='/bmical'>
             <li className="nav-item nav-link" style={{color: "brown"}} >BMI Calculator</li>

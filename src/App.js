@@ -6,6 +6,7 @@ import Login from "./Components/LogIn";
 import Navbar from "./Components/Navbar";
 import FoodDetails from "./Components/FoodDetails";
 import Food from "./Components/Food";
+import Drinks from "./Components/Drinks";
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css'
 import {ToastContainer } from 'react-toastify'
@@ -47,13 +48,10 @@ function App() {
     <Router>
     <Navbar/>
       <Switch>
-      <Route exact path = "/">
-        <div className="login">
-         
-          
+        <Route exact path = "/">
+        <div className="login">         
           <Home />
-        </div>
-          
+        </div>          
         </Route>
 
         <Route  path = "/bmical">
@@ -62,36 +60,34 @@ function App() {
         </div>        
         </Route>
 
-      <Route  path = "/login">
-        <div className="login">
-         
+        <Route  path = "/login">
+        <div className="login">        
           <Login/>
-        </div>
-          
+        </div>          
         </Route>
-        
+
         <Route exact path = "/signup">
-        <div className="login">
-         
+        <div className="login">        
           <SignUp/>
-        </div>
-          
+        </div>         
         </Route>
 
 
         <Route exact path = "/food">
         <div className="login">
-         {/* <FoodDetails/> */}
           <Food/>
-        </div>
-          
+        </div>         
         </Route>
 
-        <Route exact path = "/register/complete">
-         
-          <RegisteComplete />
-       
-         </Route>
+        <Route exact path = "/drinks">
+        <div className="login">
+          <Drinks/>
+        </div>         
+        </Route>
+
+        <Route exact path = "/register/complete">        
+          <RegisteComplete />      
+        </Route>
 
       </Switch>
      
