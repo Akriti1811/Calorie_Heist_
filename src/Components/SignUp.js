@@ -6,10 +6,6 @@ import { auth } from '../firebase'
 import { toast } from 'react-toastify'
 import { useHistory } from 'react-router';
 
-
-
-
-
 export default function SignUp() {
   
  const history = useHistory();
@@ -36,9 +32,6 @@ export default function SignUp() {
     window.localStorage.setItem('emailForReg',email);
     setEmail("");  
   }
-
-
-  
 
   return (
     <div class="signup row">

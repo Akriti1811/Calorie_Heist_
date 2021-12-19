@@ -40,7 +40,6 @@ export default function Navbar() {
                     <li className="nav-item-1 nav-link btn-outline-warning" style={{color: "yellow"}}>SignUp</li>
                 </Link>}
                
-                {/* {user && (<button className="nav-item-1 nav-link btn-outline-warning" onClick={logOutHandler}>LogOut</button>)} */}
             
                 {user&& <div class="dropdown">
                     <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +49,7 @@ export default function Navbar() {
                     <Link to='/profile'>
                         <li className="dropdown-item">My Profile</li>
                     </Link>
-                        <li className="dropdown-item btn-outline-warning" onClick={logOutHandler}>LogOut</li>
+                        <li className="dropdown-item" onClick={logOutHandler}>LogOut</li>
                     </ul>
                 </div>}
 

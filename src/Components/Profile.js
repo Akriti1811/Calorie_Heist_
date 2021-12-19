@@ -1,10 +1,12 @@
 import React from 'react'
-
+import './Profile.css'
 export default function profile() {
     return (        
-        <div className="pt-3 mx-2 mt-2">
+        <div className=" profile row">
+        <div class="col-md-6"></div>
+        <div className="col-md-6 py-4" >
         <h2 className="text-center">MY PROFILE</h2>
-        <div className="col-md-5 col-12 form-inner pb-5 px-5 mx-auto">
+        <div className="col-md-6 col-12 form-inner pb-5 mx-auto">
             <form action="" method="post">
                 <div className="mb-2">
                     <label for="Name" className="form-label">Name</label>
@@ -58,5 +60,6 @@ export default function profile() {
             </form>
         </div>
         </div>
+        </div> 
     )
 }

@@ -1,21 +1,19 @@
 import React, { useEffect } from "react";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUp from "./Components/SignUp";
 import Login from "./Components/LogIn";
 import Navbar from "./Components/Navbar";
-import FoodDetails from "./Components/FoodDetails";
 import Food from "./Components/Food";
 import Drinks from "./Components/Drinks";
 import Profile from "./Components/Profile";
+import Home from "./Components/Home";
+import BMIcal from "./Components/BMIcal";
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css'
 import {ToastContainer } from 'react-toastify'
 import RegisteComplete from "./Components/RegisterComplete";
 import {auth} from './firebase';
 import {useDispatch} from 'react-redux';
-import Home from "./Components/Home";
-import BMIcal from "./Components/BMIcal";
 
 
 function App() {
@@ -49,6 +47,7 @@ function App() {
     <Router>
     <Navbar/>
       <Switch>
+        
         <Route exact path = "/">
         <div className="login">         
           <Home />
