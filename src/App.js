@@ -14,6 +14,7 @@ import {ToastContainer } from 'react-toastify'
 import RegisteComplete from "./Components/RegisterComplete";
 import {auth} from './firebase';
 import {useDispatch} from 'react-redux';
+import Footer from "./Components/Footer";
 
 
 function App() {
@@ -96,53 +97,12 @@ function App() {
         </Route>
 
       </Switch>
-     
+     <Footer />
     </Router>
     </div>
   );
 }
 
-// return (
-//   <Router>
-//     <Navbar/>
-//       <Switch>
-
-//         <Route exact path = "/">
-//         <div className="login">        
-//         <Home/>
-//         </div>
-//         </Route>
-
-//         <Route  path = "/bmical">
-//         <div className="login">               
-//           <BMIcal/>
-//         </div>        
-//         </Route>
-
-//         <Route  path = "/login">
-//         <div className="login">       
-//           <Login/>
-//         </div>        
-//         </Route>
-        
-//         <Route exact path = "/signup">
-//         <div className="login">         
-//           <SignUp/>
-//         </div>            
-//         </Route>
-
-//         <Route exact path = "/food">
-//         <div className="login">
-//           <Food/>
-//         </div>
-          
-//         </Route>
-
-//     </Switch>
-   
-//   </Router>
-  
-// );
 
 
 export default App;
