@@ -29,6 +29,7 @@
   ul li {
     color: white;
     font-size: 20px;
+    list-style: none;
   }
   
   ul > li {
