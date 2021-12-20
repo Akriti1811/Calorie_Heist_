@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import './Profile.css'
 import axios from 'axios';
@@ -51,6 +51,36 @@ export default function Profile() {
    
    }
 
+   useEffect(() =>{
+     if(user.token){
+    const apiUrl="http://localhost:3001/api/complete-profile";
+        axios({
+            method: 'POST',
+            url: apiUrl,
+            mode: 'cors',
+            headers: {
+             authtoken:user.token},
+        },function(error, response, body) {
+            // console.log(response.json());
+            if(error) return console.error('Request failed:', error);
+            else if(response.statusCode != 200) 
+            return console.error('Error:', response.statusCode, body.toString('utf8'));
+            else console.log(body)
+        }).then((response) => {
+            console.log(response.data)
+            setName(response.data.name);
+            setAbout(response.data.about);
+            setBio(response.data.bio);
+            setDob(response.data.dob);
+            setHeight(response.data.height);
+            setWeight(response.data.weight);
+            setGoal(response.data.goal);
+      
+        });
+    }
+
+   },[user.token])
+
    const handleProfileUpdate = async (e) =>{
     e.preventDefault();
     try{
@@ -88,7 +118,7 @@ export default function Profile() {
             <form action="" method="post">
                 <div className="mb-2">
                     <label for="Name" className="form-label">Name</label>
-                    <input required type="text" className="form-control" name="Name" onChange ={(e) => setName(e.target.value)} />  
+                    <input required type="text" className="form-control" name="Name" value={name} onChange ={(e) => setName(e.target.value)} />  
                 </div>
                 <div className="mb-2 ">
                     <label for="Email" className="form-label">E-mail Address</label>
@@ -97,33 +127,33 @@ export default function Profile() {
                 
                 <div className="mb-2">
                     <label for="About" className="form-label">About</label>
-                    <input type="text" className="form-control"name="About"  onChange ={(e) => setAbout(e.target.value)}/>
+                    <input type="text" className="form-control"name="About" value={about}  onChange ={(e) => setAbout(e.target.value)}/>
                 </div>
 
                 <div className="mb-2">
                     <label for="Bio" className="form-label">Bio</label>
-                    <input type="text" className="form-control"name="Bio"  onChange ={(e) => setBio(e.target.value)}/>
+                    <input type="text" className="form-control"name="Bio" value={bio} onChange ={(e) => setBio(e.target.value)}/>
                 </div>
 
                 <div className="mb-2">
                     <label for="DOB" className="form-label">DOB</label>
-                    <input type="text" className="form-control"name="DOB"  onChange ={(e) => setDob(e.target.value)}/>
+                    <input type="text" className="form-control"name="DOB" value={dob} onChange ={(e) => setDob(e.target.value)}/>
                 </div>
 
                 <div className="row">
                     <div className="col-md-6 mb-2">
                         <label for="Height" className="form-label">Height</label>
-                        <input required type="text" className="form-control"  name="Height"  onChange ={(e) => setHeight(e.target.value)}/>
+                        <input required type="text" className="form-control" value={height}  name="Height"  onChange ={(e) => setHeight(e.target.value)}/>
                     </div>
 
                     <div className="col-md-6 mb-2">
                         <label for="Weihgt" className="form-label">Weight</label>
-                        <input required type="text" className="form-control"  name="Weight"  onChange ={(e) => setWeight(e.target.value)}/>
+                        <input required type="text" className="form-control" value={weight}  name="Weight"  onChange ={(e) => setWeight(e.target.value)}/>
                     </div>
                 </div>
                 <div className="mb-2">
                     <label for="Goal" className="form-label">Goal</label>
-                    <input type="text" className="form-control"name="Goal"  onChange ={(e) => setGoal(e.target.value)}/>
+                    <input type="text" className="form-control"name="Goal" value={goal}  onChange ={(e) => setGoal(e.target.value)}/>
                 </div>
         
                 <div className="row">           
