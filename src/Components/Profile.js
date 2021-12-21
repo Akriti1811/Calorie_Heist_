@@ -99,16 +99,6 @@ export default function Profile() {
   };
 
 
-
-
-
-
-
-
-
-
-
-
     return (        
         <div className=" profile row">
         <div class="col-md-6"></div>
@@ -157,9 +147,6 @@ export default function Profile() {
                 </div>
         
                 <div className="row">           
-                    <div className="col-md-2">
-                    <button type="reset" className=" btn btn-primary">Edit</button>
-                    </div>
                     <div  className="col-md-6">
                     <button type="submit" className="btn btn-primary" onClick={handleProfileUpdate}>Save Changes</button>
                     </div>

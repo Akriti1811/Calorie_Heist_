@@ -78,7 +78,7 @@ export default function LogIn() {
               
                 <div className="row">
                   <div>
-                    <button type="submit" onClick = {handleLogIn} className="btn btn-primary col-md-2">Login </button>
+                    <button type="submit" onClick = {handleLogIn} className="btn btn-primary col-md-3">Login </button>
                   </div>
                 </div>
             </div>
