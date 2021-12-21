@@ -8,13 +8,14 @@ import Drinks from "./Components/Drinks";
 import Profile from "./Components/Profile";
 import Home from "./Components/Home";
 import BMIcal from "./Components/BMIcal";
+import Footer from "./Components/Footer";
+import DailyIntake from "./Components/DailyIntake";
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css'
 import {ToastContainer } from 'react-toastify'
 import RegisteComplete from "./Components/RegisterComplete";
 import {auth} from './firebase';
 import {useDispatch} from 'react-redux';
-import Footer from "./Components/Footer";
 
 
 function App() {
@@ -89,6 +90,12 @@ function App() {
         <Route exact path = "/profile">
         <div className="login">
           <Profile/>
+        </div>         
+        </Route>
+
+        <Route exact path = "/dailyintake">
+        <div className="login">
+          <DailyIntake/>
         </div>         
         </Route>
 

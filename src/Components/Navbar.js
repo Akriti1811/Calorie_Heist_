@@ -49,6 +49,9 @@ export default function Navbar() {
                     <Link to='/profile'>
                         <li className="dropdown-item">My Profile</li>
                     </Link>
+                    <Link to='/dailyintake'>
+                        <li className="dropdown-item">Calories Record</li>
+                    </Link>
                         <li className="dropdown-item" onClick={logOutHandler}>LogOut</li>
                     </ul>
                 </div>}
