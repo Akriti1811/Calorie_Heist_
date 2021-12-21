@@ -17,14 +17,14 @@ const createOrUpdateBackend = async (authToken) =>{
   })
 } 
 
+
 export default function LogIn() {
   const history = useHistory();
 
   let {user }= useSelector((state) => ({ ...state}));
+  console.log(user);
   if(user)
   history.push("/");
-
-
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -51,6 +51,7 @@ export default function LogIn() {
             token:idTokenResult.token,
           }
         })
+        localStorage.setItem('user',email);
         history.push("/");
 
       }catch(err)

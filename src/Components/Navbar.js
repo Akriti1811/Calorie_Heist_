@@ -15,7 +15,9 @@ export default function Navbar() {
                 type:"LOGOUT",
                 payload:null
             })
+            localStorage.removeItem('user');
             history.push("/login");
+
 
     }
     let {user }= useSelector((state) => ({ ...state}));

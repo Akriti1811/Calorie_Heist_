@@ -31,7 +31,7 @@ const updateProfile = async (authToken,name,about,bio,dob,height,weight,goal) =>
 
 
 
-export default function Profile() {
+export default  function Profile() {
  
     const history = useHistory();
     const [name,setName] = useState("");
@@ -42,44 +42,46 @@ export default function Profile() {
     const [weight,setWeight] = useState(0);
     const [goal,setGoal] = useState("");
     let email = "";
-    let {user}= useSelector((state) => ({ ...state}));
+    const user = localStorage.getItem('user');
     if(!user)
-    history.push("/");
+    {
+        console.log(user);
+        history.push("/");}
    if(user){
-       email = user.email;
-    console.log(user.email);
+       email = user;
+    console.log(user);
    
    }
 
-   useEffect(() =>{
-     if(user.token){
-    const apiUrl="http://localhost:3001/api/complete-profile";
-        axios({
-            method: 'POST',
-            url: apiUrl,
-            mode: 'cors',
-            headers: {
-             authtoken:user.token},
-        },function(error, response, body) {
-            // console.log(response.json());
-            if(error) return console.error('Request failed:', error);
-            else if(response.statusCode != 200) 
-            return console.error('Error:', response.statusCode, body.toString('utf8'));
-            else console.log(body)
-        }).then((response) => {
-            console.log(response.data)
-            setName(response.data.name);
-            setAbout(response.data.about);
-            setBio(response.data.bio);
-            setDob(response.data.dob);
-            setHeight(response.data.height);
-            setWeight(response.data.weight);
-            setGoal(response.data.goal);
+//    useEffect(() =>{
+//      if(user){
+//     const apiUrl="http://localhost:3001/api/complete-profile";
+//         axios({
+//             method: 'POST',
+//             url: apiUrl,
+//             mode: 'cors',
+//             headers: {
+//              authtoken:user.token},
+//         },function(error, response, body) {
+//             // console.log(response.json());
+//             if(error) return console.error('Request failed:', error);
+//             else if(response.statusCode != 200) 
+//             return console.error('Error:', response.statusCode, body.toString('utf8'));
+//             else console.log(body)
+//         }).then((response) => {
+//             console.log(response.data)
+//             setName(response.data.name);
+//             setAbout(response.data.about);
+//             setBio(response.data.bio);
+//             setDob(response.data.dob);
+//             setHeight(response.data.height);
+//             setWeight(response.data.weight);
+//             setGoal(response.data.goal);
       
-        });
-    }
+//         });
+//     }
 
-   },[user.token])
+//    },[user])
 
    const handleProfileUpdate = async (e) =>{
     e.preventDefault();

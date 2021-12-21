@@ -1,20 +1,33 @@
 import React from 'react'
+import DailyMealCard from './DailyMealCard'
+import './Food.css';
+import { useHistory } from 'react-router';
+import { useSelector } from 'react-redux';
 
 export default function DailyIntake() {
+
+
+    const history = useHistory();
+    console.log("Daily intake");
+
+  const user = localStorage.getItem('user');
+  if(!user)
+  history.push("/");
+
+
+    const drink=[1,2,3,4,5];
     return (
-        <div>
-            <h2 className="py-4 text-center">DAILY CALORIES RECORD</h2>
-            <div className="card m-5">
-                <div className="card-body">
-                    <h4 className="card-title pb-2">25 DECEMBER, 2021</h4>
-                    
-                    <h5 className="py-4">Breakfast</h5>                  
-                    <h5 className="py-4">Lunch</h5>
-                    <h5 className="py-4">Snacks</h5>
-                    <h5 className="py-4">Dinner</h5>
-                    
-                </div>
-            </div>               
+        <div className="row">
+    
+
+        {
+                    drink && drink.map((element)=>(
+                        <div className="food-item-card col-4">
+                            <DailyMealCard />
+                        </div>
+                    ))
+        }
+      
         </div>
     )
 }
