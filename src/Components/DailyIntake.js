@@ -10,9 +10,10 @@ export default function DailyIntake() {
     const history = useHistory();
     console.log("Daily intake");
 
-  const user = localStorage.getItem('user');
-  if(!user)
-  history.push("/");
+    const email = localStorage.getItem('email');
+    const token = localStorage.getItem('token');
+    if(!token)
+    history.push("/");
 
 
     const drink=[1,2,3,4,5];
