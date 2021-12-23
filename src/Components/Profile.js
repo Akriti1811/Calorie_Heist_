@@ -53,35 +53,35 @@ export default  function Profile() {
    
    }
 
-//    useEffect(() =>{
-//      if(user){
-//     const apiUrl="http://localhost:3001/api/complete-profile";
-//         axios({
-//             method: 'POST',
-//             url: apiUrl,
-//             mode: 'cors',
-//             headers: {
-//              authtoken:user.token},
-//         },function(error, response, body) {
-//             // console.log(response.json());
-//             if(error) return console.error('Request failed:', error);
-//             else if(response.statusCode != 200) 
-//             return console.error('Error:', response.statusCode, body.toString('utf8'));
-//             else console.log(body)
-//         }).then((response) => {
-//             console.log(response.data)
-//             setName(response.data.name);
-//             setAbout(response.data.about);
-//             setBio(response.data.bio);
-//             setDob(response.data.dob);
-//             setHeight(response.data.height);
-//             setWeight(response.data.weight);
-//             setGoal(response.data.goal);
+   useEffect(() =>{
+     if(user){
+    const apiUrl="http://localhost:3001/api/complete-profile";
+        axios({
+            method: 'POST',
+            url: apiUrl,
+            mode: 'cors',
+            headers: {
+             authtoken:user.token},
+        },function(error, response, body) {
+            // console.log(response.json());
+            if(error) return console.error('Request failed:', error);
+            else if(response.statusCode != 200) 
+            return console.error('Error:', response.statusCode, body.toString('utf8'));
+            else console.log(body)
+        }).then((response) => {
+            console.log(response.data)
+            setName(response.data.name);
+            setAbout(response.data.about);
+            setBio(response.data.bio);
+            setDob(response.data.dob);
+            setHeight(response.data.height);
+            setWeight(response.data.weight);
+            setGoal(response.data.goal);
       
-//         });
-//     }
+        });
+    }
 
-//    },[user])
+   },[user])
 
    const handleProfileUpdate = async (e) =>{
     e.preventDefault();
