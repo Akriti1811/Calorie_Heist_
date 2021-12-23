@@ -38,9 +38,6 @@ export default  function Drink(){
 
     return( 
     <div className="row">
-    
-    
-  
     {
                 drink && drink.map((element)=>(
                     
