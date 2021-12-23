@@ -41,21 +41,24 @@ export default function BMIcal() {
                      className="form-control" id="inputPassword4"/>
                 </div>
               
-                <div className="row">
+                <div className="row ">
                   <div>
                     <button type="submit" className="btn btn-danger "
                     onClick={()=> calculate()}
                     >Calculate</button>
-                  </div>
-                  {bmi? <h1><br/>{bmi}</h1> : null
-                  }
+                  </div> 
                 </div>
-                
+                  <br/>
+                  <div >
+                  {bmi? <h3 className="bmiresult p-2">{bmi}</h3> : null
+                  }
+                  </div>
+              
             <br/>
     
           </div>
 
-          <div className="col-md-4 col-12 form-inner pb-5 mx-auto text-center">
+          <div className="cat col-md-4 col-12 form-inner p-2 mx-auto text-center">
             <h4 style={{color: "brown"}} >BMI Catogories</h4>
             <h6>{Underweight}</h6>
             <h6>{normal}</h6>
