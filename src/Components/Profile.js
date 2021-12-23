@@ -41,27 +41,27 @@ export default  function Profile() {
     const [height,setHeight] = useState(0);
     const [weight,setWeight] = useState(0);
     const [goal,setGoal] = useState("");
-    let email = "";
-    const user = localStorage.getItem('user');
-    if(!user)
+   
+    const email = localStorage.getItem('email');
+    const token = localStorage.getItem('token');
+    
+    if(!email)
     {
-        console.log(user);
         history.push("/");}
-   if(user){
-       email = user;
-    console.log(user);
+   if(email){
+    console.log(token);
    
    }
 
    useEffect(() =>{
-     if(user){
+     if(email){
     const apiUrl="http://localhost:3001/api/complete-profile";
         axios({
             method: 'POST',
             url: apiUrl,
             mode: 'cors',
             headers: {
-             authtoken:user.token},
+             authtoken:token},
         },function(error, response, body) {
             // console.log(response.json());
             if(error) return console.error('Request failed:', error);
@@ -81,14 +81,14 @@ export default  function Profile() {
         });
     }
 
-   },[user])
+   },[email])
 
    const handleProfileUpdate = async (e) =>{
     e.preventDefault();
     try{
     
        
-       updateProfile(user.token,name,about,bio,dob,height,weight,goal).then((res) => console.log("Updated")).catch((res) => console.log(res));
+       updateProfile(token,name,about,bio,dob,height,weight,goal).then((res) => console.log("Updated")).catch((res) => console.log(res));
       
         toast.success("Profile Updated");
 

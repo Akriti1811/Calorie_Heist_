@@ -51,7 +51,9 @@ export default function LogIn() {
             token:idTokenResult.token,
           }
         })
-        localStorage.setItem('user',email);
+        localStorage.setItem('email',user.email);
+        localStorage.setItem('token',idTokenResult.token);
+        
         history.push("/");
 
       }catch(err)
