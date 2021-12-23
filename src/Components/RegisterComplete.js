@@ -66,13 +66,15 @@ export default function RegisteComplete() {
 
        createOrUpdateBackend(idTokenResult.token).then((res) => console.log("Created")).catch((res) => console.log(res));
       
-      //   dispatch({
-      //   type:"LOGGED_IN_USER",
-      //   payload:{
-      //     email:user.email,
-      //     token:idTokenResult.token,
-      //   }
-      // })
+        dispatch({
+        type:"LOGGED_IN_USER",
+        payload:{
+          email:user.email,
+          token:idTokenResult.token,
+        }
+      })
+       localStorage.setItem('email',user.email);
+        localStorage.setItem('token',idTokenResult.token); 
       history.push("/");
 
         // redux store
