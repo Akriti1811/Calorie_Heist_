@@ -15,7 +15,8 @@ export default function Navbar() {
                 type:"LOGOUT",
                 payload:null
             })
-            localStorage.removeItem('user');
+            localStorage.removeItem('email');
+            localStorage.removeItem('token');
             history.push("/login");
 
 
