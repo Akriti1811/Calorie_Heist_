@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 import Food from "./Components/Food";
 import Drinks from "./Components/Drinks";
 import Contact from "./Components/Contact";
+import Blog from "./Components/Blog";
 import Profile from "./Components/Profile";
 import Home from "./Components/Home";
 import BMIcal from "./Components/BMIcal";
@@ -91,6 +92,12 @@ function App() {
         <Route exact path = "/contact">
         <div className="login">
           <Contact/>
+        </div>         
+        </Route>
+
+        <Route exact path = "/blog">
+        <div className="login">
+          <Blog/>
         </div>         
         </Route>
 
