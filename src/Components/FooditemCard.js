@@ -20,27 +20,9 @@ export default function FooditemCard(props) {
 						<p>{props.protein}g<span> Protein</span></p>
 					</div>
 				</div>
-				{/* <ul className="sci">
-					<li>
-                    
-					</li>
-					<li>
-                    
-					</li>
-					<li>
-                    
-					</li>
-                    <li>
-                   
-					</li>
-                    <li>
-                    
-					</li>
-                    <li>
-                    
-					</li>
-				</ul> */}
+				<button className="btn btn-success" >Add</button>
 			</div>
+			
 		</div>
         </section>
     )
