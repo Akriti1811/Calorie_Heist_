@@ -35,8 +35,8 @@ export default  function Drink(){
       },[])
    
  // console.log(drink);
-
-    return( 
+ let loader=<div className="loader">Loading...</div>
+    return drink ? ( 
     <div className="row">
     {
                 drink && drink.map((element)=>(
@@ -52,6 +52,6 @@ export default  function Drink(){
     }
   
     </div>
-    )
+    ) : loader;
 
 }

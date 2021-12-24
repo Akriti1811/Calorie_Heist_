@@ -59,7 +59,7 @@ section::after {
 
 .container .card:hover .content {
 	transform: translateY(-20px);
-}
+	}
 
 .container .card .content .imgBx {
 	position: relative;

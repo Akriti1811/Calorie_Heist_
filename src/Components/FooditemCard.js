@@ -20,7 +20,7 @@ export default function FooditemCard(props) {
 						<p>{props.protein}g<span> Protein</span></p>
 					</div>
 				</div>
-				<button className="btn btn-success" >Add</button>
+				<button className="btn btn-success" onClick={()=>props.storeFood(true)}>Add</button>
 			</div>
 			
 		</div>

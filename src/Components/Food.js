@@ -7,6 +7,7 @@ export default function Food(){
     let query = '3lb carrots and a chicken sandwich and fries';
     const [data,setdata]=useState();
     const [qry,setqry] = useState(query);
+    const userFoodData=[];
     let vegies=['Carrot','Corn','Potato','Sweet Potato']
     let beverages=[];
     let fruits=['Apple','Banana','Grapes','Orange','Pear','Pineapple (1 cup)','Raspberries (1 cup)','Strawberries (1 cup)','Watermelon (1 cup)'];
@@ -61,7 +62,13 @@ export default function Food(){
         });
         
     }
+     const updateFoodHandler = (id)=>{
+        userFoodData.push(id);
+        console.log(id); 
+        console.log(userFoodData);
+     }
     console.log(data);
+    
     let loader=<div className="loader">Loading...</div>
     return data ? (
         <div className="section">
@@ -90,7 +97,12 @@ export default function Food(){
                         protein={element['protein_g']}
                         sugar={element['sugar_g']}
                         fat={element['fat_total_g']}
-                        
+                        storeFood={(flag)=>{
+                            if(flag)
+                                updateFoodHandler(element["_id"])
+                            }
+                        }
+
                         />
                         
                     </div>
