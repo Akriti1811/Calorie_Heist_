@@ -4,3 +4,15 @@
     background-size: cover;
     background-position: center;
 }
+.bmiresult
+{
+    text-align: center;
+    border: 2px solid rgb(116, 32, 32);
+    border-radius: 5px;
+}
+.cat
+{
+    text-align: center;
+    border: 2px solid rgb(116, 32, 32);
+    border-radius: 5px;
+}

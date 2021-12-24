@@ -15,7 +15,9 @@ export default function Navbar() {
                 type:"LOGOUT",
                 payload:null
             })
+            localStorage.removeItem('user');
             history.push("/login");
+
 
     }
     let {user }= useSelector((state) => ({ ...state}));
@@ -49,6 +51,9 @@ export default function Navbar() {
                     <Link to='/profile'>
                         <li className="dropdown-item">My Profile</li>
                     </Link>
+                    <Link to='/dailyintake'>
+                        <li className="dropdown-item">Calories Record</li>
+                    </Link>
                         <li className="dropdown-item" onClick={logOutHandler}>LogOut</li>
                     </ul>
                 </div>}
@@ -74,10 +79,14 @@ export default function Navbar() {
             <Link to='/bmical'>
             <li className="nav-item nav-link" style={{color: "brown"}} >BMI Calculator</li>
             </Link>
-
             
-
+            <Link to='/blog'>
             <li className="nav-item nav-link" style={{color: "brown"}} >Blog</li>       
+            </Link>
+
+            <Link to='/contact'>
+            <li className="nav-item nav-link" style={{color: "brown"}} >Contact Us</li>       
+            </Link>
 
         </ul>
     </div>

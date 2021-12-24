@@ -5,9 +5,12 @@ import Login from "./Components/LogIn";
 import Navbar from "./Components/Navbar";
 import Food from "./Components/Food";
 import Drinks from "./Components/Drinks";
+import Contact from "./Components/Contact";
 import Profile from "./Components/Profile";
 import Home from "./Components/Home";
 import BMIcal from "./Components/BMIcal";
+import Footer from "./Components/Footer";
+import DailyIntake from "./Components/DailyIntake";
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css'
 import {ToastContainer } from 'react-toastify'
@@ -85,9 +88,21 @@ function App() {
         </div>         
         </Route>
 
+        <Route exact path = "/contact">
+        <div className="login">
+          <Contact/>
+        </div>         
+        </Route>
+
         <Route exact path = "/profile">
         <div className="login">
           <Profile/>
+        </div>         
+        </Route>
+
+        <Route exact path = "/dailyintake">
+        <div className="login">
+          <DailyIntake/>
         </div>         
         </Route>
 
@@ -96,53 +111,12 @@ function App() {
         </Route>
 
       </Switch>
-     
+     <Footer />
     </Router>
     </div>
   );
 }
 
-// return (
-//   <Router>
-//     <Navbar/>
-//       <Switch>
-
-//         <Route exact path = "/">
-//         <div className="login">        
-//         <Home/>
-//         </div>
-//         </Route>
-
-//         <Route  path = "/bmical">
-//         <div className="login">               
-//           <BMIcal/>
-//         </div>        
-//         </Route>
-
-//         <Route  path = "/login">
-//         <div className="login">       
-//           <Login/>
-//         </div>        
-//         </Route>
-        
-//         <Route exact path = "/signup">
-//         <div className="login">         
-//           <SignUp/>
-//         </div>            
-//         </Route>
-
-//         <Route exact path = "/food">
-//         <div className="login">
-//           <Food/>
-//         </div>
-          
-//         </Route>
-
-//     </Switch>
-   
-//   </Router>
-  
-// );
 
 
 export default App;

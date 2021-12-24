@@ -19,7 +19,7 @@ export default function Home() {
            
         </div>
         <br/>
-        <h3 style={{textAlign:'center'}}>Made with ❤️ by Akriti, Manish and Piyush</h3>
+        
         </div>
     )
 }

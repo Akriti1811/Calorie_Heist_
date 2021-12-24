@@ -17,14 +17,14 @@ const createOrUpdateBackend = async (authToken) =>{
   })
 } 
 
+
 export default function LogIn() {
   const history = useHistory();
 
   let {user }= useSelector((state) => ({ ...state}));
+  console.log(user);
   if(user)
   history.push("/");
-
-
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -51,6 +51,9 @@ export default function LogIn() {
             token:idTokenResult.token,
           }
         })
+        localStorage.setItem('email',user.email);
+        localStorage.setItem('token',idTokenResult.token);
+        
         history.push("/");
 
       }catch(err)
@@ -78,7 +81,7 @@ export default function LogIn() {
               
                 <div className="row">
                   <div>
-                    <button type="submit" onClick = {handleLogIn} className="btn btn-primary col-md-2">Login </button>
+                    <button type="submit" onClick = {handleLogIn} className="btn btn-primary col-md-3">Login </button>
                   </div>
                 </div>
             </div>
