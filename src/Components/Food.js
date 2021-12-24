@@ -8,8 +8,11 @@ export default function Food(){
     const userFoodData=[];
     const [data,setdata]=useState();
     const [qry,setqry] = useState(query);
+<<<<<<< HEAD
     const [ cal,setcal] = useState(userFoodData.length);
     
+=======
+>>>>>>> e5fd7eddeb2fa33f2c4cbf13f9d266f8de53127c
     let vegies=['Carrot','Corn','Potato','Sweet Potato']
     let beverages=[];
     let fruits=['Apple','Banana','Grapes','Orange','Pear','Pineapple (1 cup)','Raspberries (1 cup)','Strawberries (1 cup)','Watermelon (1 cup)'];
@@ -18,28 +21,23 @@ export default function Food(){
     // let query = '3lb carrots and a chicken sandwich and fries' + vegies.join(" ") + fruits.join(" ")// + milk.join(" ") + Beans.join(" ");
     console.log(query);
     useEffect(()=>{
-        // const apiUrl=`https://api.calorieninjas.com/v1/nutrition?query=${qry}`;
-        // axios({
-        //     method: 'GET',
-        //     url: apiUrl,
-        //     mode: 'cors',
-        //     headers: {
-        // 'X-Api-Key':'Xrb1NEiAjSZc9yvEQykBNg==8KADYFa4P1NhV92q'},
-        // },function(error, response, body) {
-        //     // console.log(response.json());
-        //     if(error) return console.error('Request failed:', error);
-        //     else if(response.statusCode != 200) 
-        //     return console.error('Error:', response.statusCode, body.toString('utf8'));
-        //     else console.log(body)
-        // }).then((response) => {
-        //     console.log(response.data)
-        //     setdata(response.data["items"]);
+        const apiUrl=`https://api.calorieninjas.com/v1/nutrition?query=${qry}`;
+        axios({
+            method: 'GET',
+            url: apiUrl,
+            mode: 'cors',
+            headers: {
+        'X-Api-Key':'Xrb1NEiAjSZc9yvEQykBNg==8KADYFa4P1NhV92q'},
+        },function(error, response, body) {
+            // console.log(response.json());
+            if(error) return console.error('Request failed:', error);
+            else if(response.statusCode != 200) 
+            return console.error('Error:', response.statusCode, body.toString('utf8'));
+            else console.log(body)
+        }).then((response) => {
+            console.log(response.data)
+            setdata(response.data["items"]);
            
-        // });
-        axios.get("http://localhost:3001/api/food").then((res) => {
-            console.log(res.data)
-            setdata(res.data);
-
         });
 
     },[]);
@@ -62,16 +60,8 @@ export default function Food(){
             setdata(response.data["items"]);
            
         });
-        
     }
-     const updateFoodHandler = (id,name)=>{
-        userFoodData.push(id);
-        console.log(id); 
-        console.log(userFoodData);
-        // setcal(userFoodData.length);
-     }
     console.log(data);
-    
     let loader=<div className="loader">Loading...</div>
     // let foodAdded =<div className="storeditem">
     //     <ul>
@@ -113,12 +103,15 @@ export default function Food(){
                         protein={element['protein_g']}
                         sugar={element['sugar_g']}
                         fat={element['fat_total_g']}
+<<<<<<< HEAD
                         storeFood={(flag)=>{
                             if(flag)
                                 updateFoodHandler(element["_id"],element['name'])
                             }
                         }
 
+=======
+>>>>>>> e5fd7eddeb2fa33f2c4cbf13f9d266f8de53127c
                         />
                         
                     </div>

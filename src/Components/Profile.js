@@ -129,7 +129,7 @@ export default  function Profile() {
 
                 <div className="mb-2">
                     <label for="DOB" className="form-label">DOB</label>
-                    <input type="text" className="form-control"name="DOB" value={dob} onChange ={(e) => setDob(e.target.value)}/>
+                    <input type="date" className="form-control"name="DOB" value={dob} onChange ={(e) => setDob(e.target.value)}/>
                 </div>
 
                 <div className="row">
