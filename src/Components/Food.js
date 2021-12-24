@@ -5,9 +5,11 @@ import FooditemCard from './FooditemCard';
 import './Food.css';
 export default function Food(){
     let query = '3lb carrots and a chicken sandwich and fries';
+    const userFoodData=[];
     const [data,setdata]=useState();
     const [qry,setqry] = useState(query);
-    const userFoodData=[];
+    const [ cal,setcal] = useState(userFoodData.length);
+    
     let vegies=['Carrot','Corn','Potato','Sweet Potato']
     let beverages=[];
     let fruits=['Apple','Banana','Grapes','Orange','Pear','Pineapple (1 cup)','Raspberries (1 cup)','Strawberries (1 cup)','Watermelon (1 cup)'];
@@ -62,14 +64,27 @@ export default function Food(){
         });
         
     }
-     const updateFoodHandler = (id)=>{
+     const updateFoodHandler = (id,name)=>{
         userFoodData.push(id);
         console.log(id); 
         console.log(userFoodData);
+        // setcal(userFoodData.length);
      }
     console.log(data);
     
     let loader=<div className="loader">Loading...</div>
+    // let foodAdded =<div className="storeditem">
+    //     <ul>
+    //     {
+    //     userFoodData.map((name)=>{
+    //         <li>{name["name"]}</li>
+         
+    //     })
+    // }
+    //     </ul>
+        
+       
+    // </div>
     return data ? (
         <div className="section">
             <div className="app col-12 mb-3">
@@ -83,6 +98,7 @@ export default function Food(){
              <button className="btn btn-primary col-md"
                onClick={()=>dataHandler()}>Search</button>
              </div>
+              {/* {cal ? foodAdded : null} */}
              
             <div className="cards">
             {
@@ -99,7 +115,7 @@ export default function Food(){
                         fat={element['fat_total_g']}
                         storeFood={(flag)=>{
                             if(flag)
-                                updateFoodHandler(element["_id"])
+                                updateFoodHandler(element["_id"],element['name'])
                             }
                         }
 
