@@ -37,6 +37,7 @@ export default function DailyIntake() {
                 return console.error('Error:', response.statusCode, body.toString('utf8'));
             else console.log(body)
         }).then((response) => {
+            if(response.data!=null)
             setData(response.data.dateNo);
         });
 
