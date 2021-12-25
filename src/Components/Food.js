@@ -3,6 +3,49 @@ import axios from 'axios';
 import FoodDetails from './FoodDetails';
 import FooditemCard from './FooditemCard';
 import './Food.css';
+import { toast } from 'react-toastify'
+
+
+const updateFoodIntake = async (authToken,date,mealid) => {
+    
+
+
+    var flag = 0;
+    await axios.post('http://localhost:3001/api/intakeFood',{
+     
+     date:date,
+     mealid:mealid,
+    },{
+      headers:{
+        authtoken:authToken
+      },
+    }).then((err) =>{flag = 1;}).catch((err) => {flag = 2});
+
+    if(flag == 1)
+    toast.success("Added");
+    else
+    toast.error("Something wrong, Trying Log out and Login Again");
+
+
+  } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default function Food(){
     let query = '3lb carrots and a chicken sandwich and fries';
     const items = new Map();
@@ -11,12 +54,6 @@ export default function Food(){
     const [qry,setqry] = useState(query);
     const [ cal,setcal] = useState(items);
     const [eatenfood,seteaten] = useState([]);
-    // let vegies=['Carrot','Corn','Potato','Sweet Potato']
-    // let beverages=[];
-    // let fruits=['Apple','Banana','Grapes','Orange','Pear','Pineapple (1 cup)','Raspberries (1 cup)','Strawberries (1 cup)','Watermelon (1 cup)'];
-    // let milk=['Low fat (2%) milk,Skim milk (1 cup),Yogurt (fruit-flavored, low fat) (1 cup)'];
-    // let Beans=['Black eye peas','Garbanzo beans (chick peas)','Pinto beans','Refried beans','White beans']
-    // let query = '3lb carrots and a chicken sandwich and fries' + vegies.join(" ") + fruits.join(" ")// + milk.join(" ") + Beans.join(" ");
     console.log(query);
     useEffect(()=>{
         // const apiUrl=`https://api.calorieninjas.com/v1/nutrition?query=${qry}`;
@@ -61,11 +98,17 @@ export default function Food(){
             else console.log(body)
         }).then((response) => {
             console.log(response.data)
-            setdata(response.data["items"]);
+            setdata(response.data["dateNo"]);
            
         });
     }
     const updateFoodHandler = (id,name)=>{
+
+
+        var date = new Date().toLocaleDateString("en-US");
+        
+       
+        updateFoodIntake(localStorage.getItem('token'),date,id);
 
         let mp = new Map(cal);
 
