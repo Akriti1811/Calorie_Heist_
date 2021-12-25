@@ -5,16 +5,17 @@ import FooditemCard from './FooditemCard';
 import './Food.css';
 export default function Food(){
     let query = '3lb carrots and a chicken sandwich and fries';
+    const items = new Map();
     const userFoodData=[];
     const [data,setdata]=useState();
     const [qry,setqry] = useState(query);
-    const [ cal,setcal] = useState([]);
-    
-    let vegies=['Carrot','Corn','Potato','Sweet Potato']
-    let beverages=[];
-    let fruits=['Apple','Banana','Grapes','Orange','Pear','Pineapple (1 cup)','Raspberries (1 cup)','Strawberries (1 cup)','Watermelon (1 cup)'];
-    let milk=['Low fat (2%) milk,Skim milk (1 cup),Yogurt (fruit-flavored, low fat) (1 cup)'];
-    let Beans=['Black eye peas','Garbanzo beans (chick peas)','Pinto beans','Refried beans','White beans']
+    const [ cal,setcal] = useState(items);
+    const [eatenfood,seteaten] = useState([]);
+    // let vegies=['Carrot','Corn','Potato','Sweet Potato']
+    // let beverages=[];
+    // let fruits=['Apple','Banana','Grapes','Orange','Pear','Pineapple (1 cup)','Raspberries (1 cup)','Strawberries (1 cup)','Watermelon (1 cup)'];
+    // let milk=['Low fat (2%) milk,Skim milk (1 cup),Yogurt (fruit-flavored, low fat) (1 cup)'];
+    // let Beans=['Black eye peas','Garbanzo beans (chick peas)','Pinto beans','Refried beans','White beans']
     // let query = '3lb carrots and a chicken sandwich and fries' + vegies.join(" ") + fruits.join(" ")// + milk.join(" ") + Beans.join(" ");
     console.log(query);
     useEffect(()=>{
@@ -65,13 +66,37 @@ export default function Food(){
         });
     }
     const updateFoodHandler = (id,name)=>{
-        let newarr=[...cal];
-        newarr.push(id);
-        setcal(newarr);
+
+        let mp = new Map(cal);
+
+        if(!(mp.has(id))){ 
+            let newfood = [...eatenfood]
+            newfood.push(name);
+            seteaten(newfood);
+        }
+   
+        mp.set(id,name);
+        setcal(mp);
+        Object.entries(cal).map((el)=>{
+            console.log(el);
+        })
+       
+        
+        
+        eatenfood.map((key,val)=> console.log(key))
+        console.log(eatenfood)
     }
     console.log(data);
     console.log(cal);
+    // console.log(eatenfood);
     let loader=<div className="loader">Loading...</div>
+    let foodAdded=<div>
+        <ul>
+        {eatenfood.map((el)=>{
+            <li>{el}</li>
+        })}
+        </ul>
+    </div>
     
     return data ? (
         <div className="section">
@@ -86,13 +111,21 @@ export default function Food(){
              <button className="btn btn-primary col-md"
                onClick={()=>dataHandler()}>Search</button>
              </div>
-              {/* {cal ? foodAdded : null} */}
+                       <div className="fooditems">
+                           <ul>
+                            {eatenfood.map((el)=>
+                                 <li  className="fooditemsList">{el}</li>
+                            )}
+                            </ul>
+                           
+                        </div>
+                             
              
             <div className="cards">
             {
                 data && data.map((element,index)=>(
                     
-                    <div className="food-item-card">
+                    <div className="food-item-card" key={index}>
                         <FooditemCard
                         name={element['name']}
                         cal={element['calories']}
