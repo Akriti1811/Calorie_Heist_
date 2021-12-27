@@ -51,7 +51,7 @@ export default function SignUp() {
   
               <div className="row">
                 <div>
-                  <button type="submit" className="btn btn-primary col-md-3">Signup</button>
+                  <button type="submit" className="btn btn-primary col-md-4">Signup</button>
                 </div>
               </div>
           </form>

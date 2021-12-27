@@ -130,7 +130,7 @@ export default function RegisteComplete() {
 
             <div class="row">
               <div>
-                <button type="submit" onClick={onSubmitUser} class="btn btn-primary col-md-2">Update Password</button>
+                <button type="submit" onClick={onSubmitUser} class="btn btn-primary col-md-4">Update Password</button>
               </div>
             </div>
           </div>
