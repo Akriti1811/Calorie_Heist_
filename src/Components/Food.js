@@ -108,7 +108,7 @@ export default function Food(){
         var date = new Date().toLocaleDateString("en-US");
         
        
-        updateFoodIntake(localStorage.getItem('token'),date,id);
+        updateFoodIntake(localStorage.getItem('token'),date,name);
 
         let mp = new Map(cal);
 
